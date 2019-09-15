@@ -19,6 +19,9 @@ sudo apt -y install simplescreenrecorder
 sudo apt -y install vim
 sudo apt -y install jq
 
+# image viewer
+sudo apt -y install gpicview
+
 # install password manager
 sudo apt -y install keepass2
 # autotype for keepass2
