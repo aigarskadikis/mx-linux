@@ -7,10 +7,6 @@ sudo apt -y update
 sudo apt -y upgrade
 
 # install docker containers
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker user
-sudo apt -y install docker-compose
 
 # install rclone
 curl https://rclone.org/install.sh | sudo bash
