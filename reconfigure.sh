@@ -18,6 +18,9 @@ sudo apt -y install jq
 # image viewer
 sudo apt -y install gpicview
 
+# install audio recording software
+apt -y install audacity
+
 # install password manager
 sudo apt -y install keepass2
 # autotype for keepass2
@@ -52,6 +55,9 @@ curl -s "https://catonrug.blogspot.com/feeds/posts/default/5255522565948307079?a
 sudo chmod +x /usr/bin/renew-youtube-channel
 curl -s "https://catonrug.blogspot.com/feeds/posts/default/905125781365764435?alt=json" | jq -r '.entry|.content|."$t"' | base64 --decode | sudo tee /usr/bin/renew-all-channels
 sudo chmod +x /usr/bin/renew-all-channels
+
+# remove built in torrent client
+sudo apt -y remove transmission-gtk
 
 # remove obsolete packages
 sudo apt -y autoremove
