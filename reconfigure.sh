@@ -15,6 +15,7 @@ sudo apt -y install docker-compose
 # install rclone
 curl https://rclone.org/install.sh | sudo bash
 
+sudo apt -y install simplescreenrecorder
 sudo apt -y install vim
 sudo apt -y install jq
 
