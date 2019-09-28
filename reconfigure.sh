@@ -4,6 +4,13 @@ sudo timedatectl set-timezone Europe/Riga
 
 
 sudo apt -y update
+
+# to solve error regarding 'firmware-amd-graphics' package
+cd
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+cp ~/linux-firmware/amdgpu/* /lib/firmware/amdgpu
+# apt install -y firmware-amd-graphics
+
 sudo apt -y upgrade
 
 # install rclone
