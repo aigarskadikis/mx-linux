@@ -15,27 +15,20 @@ sudo apt -y install simplescreenrecorder
 sudo apt -y install vim
 sudo apt -y install jq
 
-# image viewer
-sudo apt -y install gpicview
-
 # install audio recording software
 apt -y install audacity
 
 # install password manager
-sudo apt -y install keepass2
-# autotype for keepass2
-sudo apt -y install xdotool
+sudo apt -y install keepassx
 
 sudo apt -y install deluge-gtk python-libtorrent
 
 sudo apt -y install kodi
 
-sudo apt -y install xmms
-
 sudo apt -y install chromium
 sudo apt -y remove chromium-bsu
 
-
+# install fonts
 sudo apt -y install ttf-mscorefonts-installer && fc-cache -f -v
 
 mkdir -p ~/Downloads
@@ -59,8 +52,14 @@ sudo chmod +x /usr/bin/renew-all-channels
 # remove built in torrent client
 sudo apt -y remove transmission-gtk
 
+# https://mxlinux.org/wiki/applications/docker/
+wget -O docker.gpg  https://download.docker.com/linux/debian/gpg 
+gpg --keyid-format 0xlong docker.gpg 2>/dev/null
+gpg --keyid-format 0xlong docker.gpg 2>/dev/null | grep -sq 0x8D81803C0EBFCD88 && sudo apt-key add docker.gpg
+CODENAME=stretch
+echo "deb [arch=amd64] https://download.docker.com/linux/debian $CODENAME  stable" | sudo tee /etc/apt/sources.list.d/docker.list
+sudo apt -y update
+sudo apt -y install docker-ce
+
 # remove obsolete packages
 sudo apt -y autoremove
-
-
-
